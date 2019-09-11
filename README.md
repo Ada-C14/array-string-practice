@@ -1,7 +1,16 @@
 # Array & String Practice
 
+In this exercise you will practice using arrays & strings to solve coding problems, and then identify the time and space complexity of your solution.  Try to write solutions with minimal time and space complexity.
+
+Do not use the following methods:
+
+- `reverse`
+- `reverse!`
+
 ## Learning Goals
 
+- Use loops, strings and arrays to solve coding problems
+- Identify the time & space complexity of a given method
 
 ## Wave 1 - Valid Palindrome
 
