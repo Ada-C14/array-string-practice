@@ -26,6 +26,16 @@ end
 # Time Complexity: ?
 # Space Complexity: ?
 def longest_prefix(strings)
-  raise NotImplementedError, "Not implemented yet"
+  prefix = strings.first
+  prefix_regex = Regexp.new "^#{prefix}"
+
+  strings.each do |string|
+    while string !~ prefix_regex
+      prefix = prefix[0...-1]
+      prefix_regex = Regexp.new "^#{prefix}"
+    end
+  end
+
+  return prefix
 end
 
