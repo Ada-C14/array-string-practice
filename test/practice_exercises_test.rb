@@ -65,4 +65,12 @@ describe "Practice Exercises" do
       # Assert
       expect(output).must_equal "flower
   end
+
+    it "will work for the weird letter prefixes" do
+      strings = ["carborator","carvonulted","carsome", "calsome"]
+
+      output = longest_prefix(strings)
+
+      expect(output).must_equal "ca"
+    end
 end
