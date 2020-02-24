@@ -18,40 +18,53 @@ describe "Practice Exercises" do
     end
 
     it "will return true for long phrases with spaces and punctuation" do
+      # Arrange
       palindrome_word = "A man, a plan, a canal: Panama"
 
+      # Act-Assert
       expect(is_palindrome(palindrome_word)).must_equal true
     end
 
     it "will return false for non-palindrome long phrases with spaces and punctuation" do
+      # Arrange
       palindrome_word = "A man, a plan, a canal: Panam"
-      expect(is_palindrome(palindrome_word)).must_equal false
 
+      # Act-Assert
+      expect(is_palindrome(palindrome_word)).must_equal false
     end
   end
 
   describe "Longest valid substring" do
     it "will work for the README strings" do
+      # Arrange
       strings = ["flower","flow","flight"]
 
+      # Act
       output = longest_prefix(strings)
 
+      # Assert
       expect(output).must_equal "fl"
     end
 
     it "will work for the strings with the common prefix in the rear" do
+      # Arrange
       strings = ["flower","flow","flight", "fpastafl"]
 
+      # Act
       output = longest_prefix(strings)
 
+      # Assert
       expect(output).must_equal "f"
     end
 
     it "will work for the README strings" do
+      # Arrange
       strings = ["dog","racecar","car"]
 
+      # Act
       output = longest_prefix(strings)
 
+      # Assert
       expect(output).must_equal ""
     end
     
@@ -63,14 +76,18 @@ describe "Practice Exercises" do
       output = longest_prefix(strings)
       
       # Assert
-      expect(output).must_equal "flower
-  end
+      expect(output).must_equal "flower"
+    end
 
     it "will work for the weird letter prefixes" do
+      # Arrange
       strings = ["carborator","carvonulted","carsome", "calsome"]
 
+      # Act
       output = longest_prefix(strings)
 
+      # Assert
       expect(output).must_equal "ca"
     end
+  end
 end
