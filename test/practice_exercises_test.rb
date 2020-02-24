@@ -68,9 +68,9 @@ describe "Practice Exercises" do
       expect(output).must_equal ""
     end
     
-    it "will work for [“flower”,“flower”,“flower”]" do
+    it "will work for ['flower','flower','flower']" do
       # Arrange
-      strings = [“flower”,“flower”,“flower”]
+      strings = ["flower","flower","flower"]
       
       # Act
       output = longest_prefix(strings)
