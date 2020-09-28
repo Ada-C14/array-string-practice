@@ -15,12 +15,19 @@ end
 # Time Complexity: O(n^2)
 # Space Complexity: O(1)
 def longest_prefix(strings)
-  prefix = strings[0]
+  first_word = strings[0]
+  prefix = ""
 
-  strings[1..-1].each do |word|
-    while word.index(prefix) != 0
-      prefix = prefix[0...-1]
+  first_word.length.times do |i|
+    char = first_word[i]
+
+    strings[1..-1].each do |word|
+      if word[i] != char
+        return prefix
+      end
     end
+
+    prefix << char
   end
 
   return prefix
