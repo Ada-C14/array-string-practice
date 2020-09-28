@@ -1,6 +1,6 @@
 
 # Time Complexity: O(n)
-# Space Complexity: O(n^2), because we have an array of chars, and we store the char counts in a hash.
+# Space Complexity: O(n), because we have an array of chars, and we store the char counts in a hash.
 def is_palindrome(string)
   chars = string.downcase.scan(/\w/)
   char_counts = Hash.new(0)
