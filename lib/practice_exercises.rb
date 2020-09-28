@@ -37,12 +37,14 @@ def longest_prefix(strings)
     while next_word < strings.length
       current_word_letter = strings[0][letter]
       next_word_letter = strings[next_word][letter]
-      if (current_word_letter == next_word_letter) && (next_word == 1)
-        prefix += strings[0][letter]
-      elsif (current_word_letter != next_word_letter)
-        if next_word == 1
-          return prefix
+      if next_word == 1
+        if current_word_letter == next_word_letter
+          prefix += strings[0][letter]
         else
+          return prefix
+        end
+      else
+        if current_word_letter != next_word_letter
           return prefix[0..-2]
         end
       end
