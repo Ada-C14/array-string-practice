@@ -1,54 +1,48 @@
 
-# Time Complexity: 3 * O(n) + O(n/2) == O(n)
+# Time Complexity: O(3n + n/2) == O(n)
 # Space Complexity: O(1)
 def is_palindrome(string)
-  # .downcase TC = O(n)
-  string = string.downcase
-  # .delete TC = O(n)
-  string = string.delete "^a-z"
+  string = string.downcase                # .downcase TC = O(n)
+  string = string.delete "^a-z"           # .delete TC = O(n)
 
-  i = 0
-  # .length TC = O(n)
-  j = string.length - 1
+  first = 0
+  last = string.length - 1                # .length TC = O(n)
 
-  # loop TC = O(n/2) == O(n)
-  until i >= j
-    if string[i] != string[j]
+  until first >= last                     # loop TC = O(n/2) == O(n)
+    if string[first] != string[last]
       return false
     end
-    i += 1
-    j -= 1
+    first += 1
+    last -= 1
   end
 
   return true
 
 end
 
-# Time Complexity: O(n^2)??
+# Time Complexity: O(n^2 + 2n) == O(n^2)???
 # Space Complexity: O(n)
 def longest_prefix(strings)
-  prefix = ""
-  letter = 0
+  num_words = strings.length - 1           # .length TC = O(n)
+  word_length = strings[0].length          # .length TC = O(n)
 
-  # loop TC = O(n)
-  while letter < strings[0].length
+  prefix = ""
+
+  letter = 0
+  while letter < word_length               # loop TC = O(n)
+    current_letter = strings[0][letter]
     next_word = 1
-    # loop TC = O(n)
-    while next_word < strings.length
-      current_word_letter = strings[0][letter]
+    while next_word <= num_words            # loop TC = O(n)
       next_word_letter = strings[next_word][letter]
-      if (current_word_letter == next_word_letter) && (next_word == 1)
+      if (next_word == num_words) && (current_letter == next_word_letter)
         prefix += strings[0][letter]
-      elsif (current_word_letter != next_word_letter)
-        if next_word == 1
-          return prefix
-        else
-          return prefix[0..-2]
-        end
+      elsif current_letter != next_word_letter
+        return prefix
       end
       next_word += 1
     end
     letter += 1
   end
+
   return prefix
 end
