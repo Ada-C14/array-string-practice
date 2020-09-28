@@ -18,10 +18,10 @@ end
 # Space Complexity: O(m) m is the prefix size.
 def longest_prefix(strings)
   prefix = ""
-  strings.sort!{|a, b| b.length <=> a.length}
+  shortest_word = strings.min_by {|word| word.length}
 
-  strings.first.length.times do |i|
-    if strings.all? {|word| word[i] == strings.first[i]}
+  shortest_word.length.times do |i|
+    if strings.all? {|word| word[i] == shortest_word[i]}
       prefix += strings.first[i]
     else
       break
