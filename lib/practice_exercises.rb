@@ -1,3 +1,4 @@
+# Helper method for is_palindrome
 def convert_string_array(string)
   array = []
   string.each_char do |char|
@@ -29,9 +30,29 @@ def is_palindrome(string)
   return true
 end
 
-# Time Complexity: ?
-# Space Complexity: ?
+##########################################
+
+# Time Complexity: O(n*m)
+# >> each_char is O(n) where n is the length of the first string in the array
+# >> inner loop is O(m) where m in the size of the strings array (num of strings incl in array)
+# Space Complexity: O(n) where n is the length of the first string in the array
+# >> common_prefix is a string with up to length n (assuming all other strings are length n or longer)
 def longest_prefix(strings)
-  raise NotImplementedError, "Not implemented yet"
+  # raise NotImplementedError, "Not implemented yet"
+  common_prefix = ""
+  if strings.empty?
+    return common_prefix
+  end
+
+  strings[0].each_char.with_index do |char, index|
+    (1...strings.size).each do |arr_position|
+      if char != strings[arr_position][index]
+        return common_prefix
+      end
+    end
+    common_prefix << char
+  end
+
+  return common_prefix
 end
 
