@@ -34,7 +34,7 @@ def longest_prefix(strings)
     next_word = 1
     while next_word <= num_words            # loop TC = O(n)
       next_word_letter = strings[next_word][letter]
-      if (next_word == num_words) && (current_letter == next_word_letter)
+      if (current_letter == next_word_letter) && (next_word == num_words)
         prefix += strings[0][letter]
       elsif current_letter != next_word_letter
         return prefix
