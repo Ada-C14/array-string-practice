@@ -24,20 +24,27 @@ def is_palindrome(string)
 
 end
 
-# Time Complexity: ?
+# Time Complexity: O(n^2)??
 # Space Complexity: O(n)
 def longest_prefix(strings)
   prefix = ""
   letter = 0
+
+  # loop TC = O(n)
   while letter < strings[0].length
     next_word = 1
+    # loop TC = O(n)
     while next_word < strings.length
       current_word_letter = strings[0][letter]
       next_word_letter = strings[next_word][letter]
       if (current_word_letter == next_word_letter) && (next_word == 1)
         prefix += strings[0][letter]
       elsif (current_word_letter != next_word_letter)
-        return prefix[0..-2]
+        if next_word == 1
+          return prefix
+        else
+          return prefix[0..-2]
+        end
       end
       next_word += 1
     end
