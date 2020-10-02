@@ -6,6 +6,7 @@ describe "Practice Exercises" do
       expect(is_palindrome("a")).must_equal true
       expect(is_palindrome("racecar")).must_equal true
       expect(is_palindrome("poop")).must_equal true
+      expect(is_palindrome("paop")).must_equal false
     end
 
     it "will return false for non-palindrome 1-word strings" do
