@@ -33,23 +33,20 @@ end
 # Time Complexity: O(n)
 # Space Complexity: O(1)??
 def longest_prefix(strings)
-  longest_prefix = ""
   reference_string = strings[0]
   matched = true
   i = 0
 
-  while matched && reference_string[i]
-    strings.each do |test_string|
-      if test_string[i] != reference_string[i]
+  while matched && !reference_string[i].nil?
+    strings.each do |string_to_compare|
+      if string_to_compare[i] != reference_string[i]
         matched = false
-        return longest_prefix
+        return reference_string[0...i]
       end
     end
 
-    longest_prefix << reference_string[i]
     i += 1
   end
 
-  return longest_prefix
+  return reference_string[0...i]
 end
-
