@@ -1,4 +1,3 @@
-
 # Time Complexity: O(n)
 # Space Complexity: O(1)
 def is_palindrome(string)
@@ -10,7 +9,6 @@ def is_palindrome(string)
     i = 0 # counting from the start of the array
     j = -1 # counting from the end of the array
 
-    # until back_counter - front_counter == -1
     half_string_length.times do
       # if character at index i is a not an alphabetic character, increment i
       until /[A-Z]/i =~ string[i]
@@ -31,7 +29,7 @@ def is_palindrome(string)
 end
 
 # Time Complexity: O(m*n) where m is the length of the shortest string and n is the length of the array of strings
-# Space Complexity: O(1)
+# Space Complexity: O(m) where m is the length of the shortest string
 def longest_prefix(strings)
   reference_string = strings[0]
   matched = true
