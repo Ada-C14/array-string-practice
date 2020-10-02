@@ -30,14 +30,18 @@ def is_palindrome(string)
   return true
 end
 
-# Time Complexity: O(n)
-# Space Complexity: O(1)??
+# Time Complexity: O(m*n) where m is the length of the shortest string and n is the length of the array of strings
+# Space Complexity: O(1)
 def longest_prefix(strings)
   reference_string = strings[0]
   matched = true
   i = 0
 
-  while matched && !reference_string[i].nil?
+  while matched
+    if reference_string[i].nil?
+      return reference_string[0...i]
+    end
+
     strings.each do |string_to_compare|
       if string_to_compare[i] != reference_string[i]
         matched = false
