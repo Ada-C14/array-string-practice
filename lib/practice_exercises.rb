@@ -16,7 +16,7 @@ end
 
 # Time Complexity: 0(n)
 # Space Complexity: O(1)
-def c
+def longest_prefix(strings)
   i = 0
   return "" if strings.empty?
   strings[0].length.times do
