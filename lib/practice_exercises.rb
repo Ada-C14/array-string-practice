@@ -1,13 +1,55 @@
 
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 def is_palindrome(string)
-  raise NotImplementedError, "Not implemented yet"
+  if string.empty?
+    return true
+  else
+    half_string_length = string.length / 2
+
+    i = 0 # counting from the start of the array
+    j = -1 # counting from the end of the array
+
+    # until back_counter - front_counter == -1
+    half_string_length.times do
+      # if character at index i is a not an alphabetic character, increment i
+      until /[A-Z]/i =~ string[i]
+        i += 1
+      end
+
+      # if character at index j is a not an alphabetic character, decrement j
+      until /[A-Z]/i =~ string[j]
+        j -= 1
+      end
+
+      return false unless string[i].casecmp(string[j]) == 0
+    end
+
+  end
+
+  return true
 end
 
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(n)
+# Space Complexity: O(1)??
 def longest_prefix(strings)
-  raise NotImplementedError, "Not implemented yet"
+  longest_prefix = ""
+  reference_string = strings[0]
+  matched = true
+  i = 0
+
+  while matched && reference_string[i]
+    strings.each do |test_string|
+      if test_string[i] != reference_string[i]
+        matched = false
+        return longest_prefix
+      end
+    end
+
+    longest_prefix << reference_string[i]
+    i += 1
+  end
+
+  return longest_prefix
 end
 
