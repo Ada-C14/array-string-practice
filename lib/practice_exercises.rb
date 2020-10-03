@@ -1,5 +1,5 @@
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 def is_palindrome(string)
 
   return true if string.length == 0 || string.length == 1
@@ -25,8 +25,18 @@ def is_palindrome(string)
 
 end
 
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(nm)
+# Space Complexity: O(m)
 def longest_prefix(strings)
-  raise NotImplementedError, "Not implemented yet"
+  prefix = ""
+  index = 0
+
+  strings[0].each_char do |letter|
+    strings.each do |word|
+      return prefix unless word[index] == letter
+    end
+    prefix << letter
+    index += 1
+  end
+
 end
