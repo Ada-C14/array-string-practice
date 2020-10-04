@@ -1,10 +1,10 @@
-# Time Complexity:
-# Space Complexity:
+# Time Complexity: O(n) - depends on the length of the string (array)
+# Space Complexity: O(1) - returns true or false regardless of the size of the string
 
 def is_palindrome(string)
   reverse = ""
   string.downcase!
-  string.gsub!(/[^0-9a-zA-Z]/, '')
+  string.gsub!(/[^0-9a-z]/, '')
 
   if string.length <= 1
     return true
@@ -26,9 +26,8 @@ def is_palindrome(string)
   end
 end
 
-
-# Time Complexity:
-# Space Complexity:
+# Time Complexity: O(nm) - loops through two different arrays, first word and then all words
+# Space Complexity: O(1) - returns the longest prefix regardless of the size of the strings array
 
 def longest_prefix(strings)
   prefix = ""
