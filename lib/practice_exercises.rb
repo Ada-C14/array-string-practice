@@ -2,7 +2,7 @@
 # Time Complexity: O(n)
 # Space Complexity: O(1)
 def is_palindrome(string)
-  string.downcase! #cannot have this in front of gsub or it will replace characters that are already downcase with nil
+  string.downcase! #cannot have this in front of gsub or it will replace the word with nil if there are already downcase letters
   string.gsub!(/[^A-Za-z]/, '') #substitutes any non-letter characters with empty string
 
   string.each_char.with_index do |letter, index|
@@ -14,10 +14,15 @@ def is_palindrome(string)
   return true
 end
 
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(n*m)
+# Space Complexity: O(1)
 def longest_prefix(strings)
+  prefix = ""
 
-
-
+  strings[0].each_char.with_index do |letter, index|
+    strings.each do |word|
+      return prefix unless word[index] == letter
+    end
+    prefix << letter
+  end
 end
