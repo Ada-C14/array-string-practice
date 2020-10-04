@@ -3,7 +3,7 @@
 # Space Complexity: O(1)
 def is_palindrome(string)
   string.downcase! #cannot have this in front of gsub or it will replace the word with nil if there are already downcase letters
-  string.gsub!(/[^A-Za-z]/, '') #substitutes any non-letter characters with empty string
+  string.gsub!(/[^A-Za-z]/, '')
 
   string.each_char.with_index do |letter, index|
     if letter != string[string.length - 1 - index]
