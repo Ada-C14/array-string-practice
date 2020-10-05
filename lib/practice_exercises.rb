@@ -1,22 +1,34 @@
 
 # Time Complexity: O(n)
 # Space Complexity: O(n)
+#
 def is_palindrome(string)
-  array = string.split(//)
-  letters = /[\w]/i
-  letter_array = array.select { |char| letters.match(char) }
 
+  array = string.split(//)
+
+  alphanumeric = /[\w]/i
   least = 0
-  greatest = letter_array.length - 1
+  greatest = array.length - 1
+
   while least < greatest
-    if letter_array[least].downcase != letter_array[greatest].downcase
+
+    until alphanumeric.match(array[least])
+      least += 1
+    end
+    until alphanumeric.match(array[greatest])
+      greatest -= 1
+    end
+
+    if array[least].downcase != array[greatest].downcase
       return false
     end
+
     least += 1
     greatest -= 1
   end
 
   return true
+
 end
 
 # Time Complexity: O(n^2)
