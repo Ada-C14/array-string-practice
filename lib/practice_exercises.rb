@@ -32,16 +32,29 @@ def reverse_string(string)
 end
 
 
-# Time Complexity: ?
-# Space Complexity: ?
-#
+# Time Complexity: O(n2) => we have nested loop
+# Space Complexity: O(1)
+# split the arr
 def longest_prefix(strings)
-  # raise NotImplementedError, "Not implemented yet"
+  prefix = ""
+  first_string = strings.first
 
+  first_string.each_char.with_index do |letter, i|
+    strings.each do |string|
+      if letter != string[i]
+        return prefix
+      end
+    end
+    prefix += letter
+  end
 end
 
 
+# strings = ["flower","flow","flight"]
 
-
-
+# first_string = strings.first
+#
+# first_string.each_char.with_index do |lleter, index|
+#   puts "letter: #{lleter} - i: #{index}"
+# end
 
