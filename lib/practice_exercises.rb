@@ -23,14 +23,30 @@ def is_palindrome(string)
     a += 1
     b -= 1
   end
-  # return true or false
+
   return true
 end
 
 # Time Complexity: ?
 # Space Complexity: ?
 def longest_prefix(strings)
-  raise NotImplementedError, "Not implemented yet"
-end
+  shortest_string = strings.min_by { |string| string.length }
 
+  output = ""
+
+  shortest_string.length.times do |i|
+    # letter to compare with the rest of the strings
+    letter = strings[0][i]
+
+    strings.each do |string|
+      if letter != string[i]
+        return output
+      end
+    end
+
+    output << letter
+  end
+
+  return output
+end
 
