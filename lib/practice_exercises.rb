@@ -30,20 +30,28 @@ end
 # Time Complexity: ?
 # Space Complexity: ?
 def longest_prefix(strings)
+  # found the string with the shortest length
   shortest_string = strings.min_by { |string| string.length }
 
   output = ""
 
+  # using the length of the shortest string
+  # to determine how many loops
   shortest_string.length.times do |i|
-    # letter to compare with the rest of the strings
+    # letter to compare with the rest of the strings at the same index
     letter = strings[0][i]
 
     strings.each do |string|
+      # if the letters don't match
+      # it will return the output at that moment
       if letter != string[i]
         return output
       end
     end
 
+    # if the letter was compared
+    # with all of the other string at the same index will no problems
+    # the letter will be shoveled to output
     output << letter
   end
 
