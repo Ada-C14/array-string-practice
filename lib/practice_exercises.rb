@@ -2,10 +2,12 @@
 # Time Complexity: O(n)
 # Space Complexity: O(n)
 def is_palindrome(string)
-  string = string.split('').join('')
-  reverse_string = string.clone
+  string = string.downcase.gsub(/\W/,'')
+  # string = string.split('')
+
+  reverse_string = string.split('')
   i = 0
-  j = length - 1
+  j = reverse_string.length - 1
   while i < j
     temp = reverse_string[i]
     reverse_string[i] = reverse_string[j]
@@ -14,10 +16,12 @@ def is_palindrome(string)
     j -= 1
   end
   x = 0
-  string.each do |letter|
+  string.each_char do |letter|
+
     if letter != reverse_string[x]
       return false
     end
+
     x += 1
   end
   return true
@@ -33,7 +37,7 @@ def longest_prefix(strings)
 
   prefix = ""
   i = 0
-  until string_1[i] != string_2[i]
+  until string_1[i] != string_2[i] || i == string_1.length#additional checksstring_1[i] != string_2[i] ||
     if string_1[i] == string_2[i]
       prefix << string_1[i]
     end
