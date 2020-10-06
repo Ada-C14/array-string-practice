@@ -2,7 +2,7 @@
 # Time Complexity: O(n)
 # Space Complexity: O(n)
 def is_palindrome(string)
-  string = string.split('')
+  string = string.split('').join('')
   reverse_string = string.clone
   i = 0
   j = length - 1
