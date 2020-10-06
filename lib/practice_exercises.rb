@@ -1,10 +1,8 @@
 
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(n)?
+# Space Complexity: O(1)?
 def is_palindrome(string)
-  if string == ""
-    return true
-  end
+  return true if string == ""
 
   letter_counter = 0
   new_string = string.downcase.gsub(/[^A-Za-z0-9]\s*/, '')
@@ -23,6 +21,11 @@ end
 # Time Complexity: ?
 # Space Complexity: ?
 def longest_prefix(strings)
-  raise NotImplementedError, "Not implemented yet"
+  return '' if strings.empty?
+
+  strings.each.with_index do |char, i|
+
+  end
+
 end
 
