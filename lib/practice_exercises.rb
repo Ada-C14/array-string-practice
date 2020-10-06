@@ -2,8 +2,8 @@
 # Time Complexity: 0(n), where n is the length of the string
 # The loop in this method get ran 1/2n
 # dropping the coefficient will be O(n)
-# Space Complexity: 0(n), where n is the length of the string
-# a new string is created based off of the input string
+# Space Complexity: 0(1)
+# uses constant amount of memory
 def is_palindrome(string)
   # replace all non letters with empty string
   new_string = string.upcase.gsub(/[^A-Za-z]/, '')
@@ -27,8 +27,11 @@ def is_palindrome(string)
   return true
 end
 
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(n*m)
+# n is the length of the shortest string
+# m is the length of the strings array
+# Space Complexity: O(1)
+# uses constant amount of memory
 def longest_prefix(strings)
   # found the string with the shortest length
   shortest_string = strings.min_by { |string| string.length }
