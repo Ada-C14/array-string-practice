@@ -1,6 +1,6 @@
 
-# Time Complexity: O(N)
-# Space Complexity: ?
+# Time Complexity: O(n)
+# Space Complexity: O(n)
 def is_palindrome(string)
   reversed = ""
   punctuation = ""
@@ -28,8 +28,8 @@ def is_palindrome(string)
 end
 
 
-# Time Complexity: O(N^2)
-# Space Complexity: ?
+# Time Complexity: O(n^2)
+# Space Complexity: o(n)
 def longest_prefix(strings)
   # raise NotImplementedError, "Not implemented yet"
   new_input = ""
