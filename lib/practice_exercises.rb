@@ -37,7 +37,7 @@ def longest_prefix(strings)
 
   prefix = ""
   i = 0
-  until string_1[i] != string_2[i] || i == string_1.length#additional checksstring_1[i] != string_2[i] ||
+  until string_1[i] != string_2[i] || i == string_1.length
     if string_1[i] == string_2[i]
       prefix << string_1[i]
     end
