@@ -35,11 +35,7 @@ def longest_prefix(strings)
   matched = true
   i = 0
 
-  while matched
-    if reference_string[i].nil?
-      return reference_string[0...i]
-    end
-
+  while matched && reference_string[i] # dependent on m, the length of the reference string
     strings.each do |string_to_compare|
       if string_to_compare[i] != reference_string[i]
         matched = false
@@ -50,5 +46,23 @@ def longest_prefix(strings)
     i += 1
   end
 
-  return reference_string[0...i]
+  return reference_string[0...i] # creates a new string so that the original string is not modified
 end
+
+# ~~~ Notes ~~~
+# array = ["flower","flow","flight"]
+# puts "array's id is #{array.object_id}"
+# first_element = array[0]
+# second_element = array[1]
+# third_element = array[2]
+# puts "first_element's id is #{first_element.object_id}"
+# puts "second_element's id is #{second_element.object_id}"
+# puts "third_element's id is #{third_element.object_id}"
+#
+# puts "section's id is #{array[0][0...3].object_id}"
+#
+# # array's id is 70312473660380
+# # first_element's id is 70312473660440
+# # second_element's id is 70312473660420
+# # third_element's id is 70312473660400
+# # section's id is 70312473660000 DIFFERENT so returning a section of a string makes a new string object
