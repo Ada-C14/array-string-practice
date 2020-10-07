@@ -30,7 +30,7 @@ end
 # Time Complexity: O(n*m)
 # n is the length of the shortest string
 # m is the length of the strings array
-# Space Complexity: O(m), where m is the shortest string
+# Space Complexity: O(n), where m is the shortest string
 def longest_prefix(strings)
   # found the string with the shortest length
   shortest_string = strings.min_by { |string| string.length }
