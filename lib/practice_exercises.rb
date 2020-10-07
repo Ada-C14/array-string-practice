@@ -19,40 +19,30 @@ def is_palindrome(string)
 end
 
 
-#strings = [], ""
-#strings = ['Hello'] 'Hello', ''
-#strings = ['foo', 'bar'] ''
-#strings = ['hello', 'hello'] 'hello'
-#strings = ['abc', 'abcde'] 'abc'
-#strings = ['abc', 'abcde', 'foo', 'foo']  'abc' or 'foo' or maybe even ['abc', 'foo']
-#strings = ['abc', 'abcde', 'ab'] 'ab'
-# Time Complexity: ?
-# Space Complexity: ?
-#strings = ['abc', 'abcde', 'abd']
-#prefix = ""
-# string_idx = 0
-# char_idx = 0
-# =? strings[1,0]
-# =? strings[2,0]
-# all true so, prefix += strings[0][0]
+# Time Complexity: O(n^2)
+# Space Complexity: O(m*n)
 
-#handle when you run out of a string or is different
 
 def longest_prefix(strings)
   string_index = 0
   char_index = 0
   longest_prefix = ""
 
+  # return the length of the shortest string
+  shortest_string_length = (strings.min_by { |string| string.length }).length
+
   return longest_prefix if strings.empty?
 
-  while  char_index < strings.length
-    if strings[string_index][char_index] == strings[string_index + 1][char_index]
-      longest_prefix += strings[string_index][char_index]
-      char_index +=1
-      string_index +=1
-    else
-      return ""
+  while  char_index < shortest_string_length
+    char = strings[string_index][char_index]
+    strings.each do |string|
+      return longest_prefix if string[char_index] != char
     end
+
+    longest_prefix += strings[string_index][char_index]
+    char_index +=1
+    string_index +=1
+  
   end
 
   return longest_prefix
