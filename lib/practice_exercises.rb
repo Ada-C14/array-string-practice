@@ -52,16 +52,34 @@ def is_palindrome(string)
 end
 
 
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(nm)
+# Space Complexity: O(n)
 def longest_prefix(strings)
-  i = 0
-  prefix = []
-  letters = strings.map(&:chars)
-  pp letters
-  if letters[i].include?(letters[i+1])
-    
+
+  control = strings.min_by {|word| word.length}
+  strings.each do |string|
+  prefix = ""
+  index = 0
+
+  while index < control.length do
+    if control[index] == string[index]
+      prefix += control[index]
+      index += 1
+    else
+      break
+      end
   end
+
+  return "" if control.empty?
+  control = prefix
+  end
+
+
+  return control
+  end
+
+
+
   # letters.each do |word|
   #   pp word
   #   # pp letters[i]
@@ -72,6 +90,6 @@ def longest_prefix(strings)
   #   i += 1
   # end
   # pp prefix
-end
+
 
 
