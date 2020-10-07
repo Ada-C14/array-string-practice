@@ -1,19 +1,25 @@
 
 # Time Complexity: O(n)
-# Space Complexity: O(n), because we have an array of chars, and we store the char counts in a hash.
+# Space Complexity: O(1)
 def is_palindrome(string)
-  chars = string.downcase.scan(/\w/)
-  char_counts = Hash.new(0)
+  letters = string.downcase.scan(/\w/)
+  first = 0
+  last = letters.length - 1
 
-  chars.each do |char|
-    char_counts[char] += 1
+  until first >= last
+    if letters[first] != letters[last]
+      return false
+    end
+
+    first += 1
+    last -= 1
   end
 
-  return char_counts.values.all? { |chars| chars.even? } || char_counts.values.one? { |chars| chars.odd? }
+  return true
 end
 
-# Time Complexity: O(n^2)
-# Space Complexity: O(1)
+# Time Complexity: O(nm)
+# Space Complexity: O(m)
 def longest_prefix(strings)
   first_word = strings[0]
   prefix = ""
@@ -32,4 +38,3 @@ def longest_prefix(strings)
 
   return prefix
 end
-
