@@ -1,6 +1,6 @@
 
 # Time Complexity: O(n)
-# Space Complexity: O(1)
+# Space Complexity: O(n)
 def is_palindrome(string)
   letters = string.downcase.scan(/\w/)
   first = 0
