@@ -41,7 +41,6 @@ def longest_prefix(strings)
 
     longest_prefix += strings[string_index][char_index]
     char_index +=1
-    string_index +=1
   
   end
 

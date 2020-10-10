@@ -67,11 +67,11 @@ describe "Practice Exercises" do
       # Assert
       expect(output).must_equal ""
     end
-    
+    # require 'pry'
     it "will work for ['flower','flower','flower']" do
       # Arrange
       strings = ["flower","flower","flower"]
-      
+      # binding.pry
       # Act
       output = longest_prefix(strings)
       
