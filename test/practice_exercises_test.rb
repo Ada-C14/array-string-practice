@@ -34,60 +34,60 @@ describe "Practice Exercises" do
     end
   end
 
-  describe "Longest valid substring" do
-    it "will work for the README strings" do
-      # Arrange
-      strings = ["flower","flow","flight"]
-
-      # Act
-      output = longest_prefix(strings)
-
-      # Assert
-      expect(output).must_equal "fl"
-    end
-
-    it "will work for the strings with the common prefix in the rear" do
-      # Arrange
-      strings = ["flower","flow","flight", "fpastafl"]
-
-      # Act
-      output = longest_prefix(strings)
-
-      # Assert
-      expect(output).must_equal "f"
-    end
-
-    it "will work for the README strings" do
-      # Arrange
-      strings = ["dog","racecar","car"]
-
-      # Act
-      output = longest_prefix(strings)
-
-      # Assert
-      expect(output).must_equal ""
-    end
-    
-    it "will work for ['flower','flower','flower']" do
-      # Arrange
-      strings = ["flower","flower","flower"]
-      
-      # Act
-      output = longest_prefix(strings)
-      
-      # Assert
-      expect(output).must_equal "flower"
-    end
-
-    it "will work for the weird letter prefixes" do
-      # Arrange
-      strings = ["carborator","carvonulted","carsome", "calsome"]
-
-      # Act
-      output = longest_prefix(strings)
-
-      # Assert
-      expect(output).must_equal "ca"
-    end
-  end
+  # describe "Longest valid substring" do
+  #   it "will work for the README strings" do
+  #     # Arrange
+  #     strings = ["flower","flow","flight"]
+  #
+  #     # Act
+  #     output = longest_prefix(strings)
+  #
+  #     # Assert
+  #     expect(output).must_equal "fl"
+  #   end
+  #
+  #   it "will work for the strings with the common prefix in the rear" do
+  #     # Arrange
+  #     strings = ["flower","flow","flight", "fpastafl"]
+  #
+  #     # Act
+  #     output = longest_prefix(strings)
+  #
+  #     # Assert
+  #     expect(output).must_equal "f"
+  #   end
+  #
+  #   it "will work for the README strings" do
+  #     # Arrange
+  #     strings = ["dog","racecar","car"]
+  #
+  #     # Act
+  #     output = longest_prefix(strings)
+  #
+  #     # Assert
+  #     expect(output).must_equal ""
+  #   end
+  #
+  #   it "will work for ['flower','flower','flower']" do
+  #     # Arrange
+  #     strings = ["flower","flower","flower"]
+  #
+  #     # Act
+  #     output = longest_prefix(strings)
+  #
+  #     # Assert
+  #     expect(output).must_equal "flower"
+  #   end
+  #
+  #   it "will work for the weird letter prefixes" do
+  #     # Arrange
+  #     strings = ["carborator","carvonulted","carsome", "calsome"]
+  #
+  #     # Act
+  #     output = longest_prefix(strings)
+  #
+  #     # Assert
+  #     expect(output).must_equal "ca"
+  #   end
+  # end
 end
