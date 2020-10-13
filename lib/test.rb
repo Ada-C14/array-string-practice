@@ -1,21 +1,20 @@
 
-# Time Complexity: O(n)
-# Space Complexity: O(n)
+# Time Complexity: ?
+# Space Complexity: ?
 def is_palindrome(string)
 
-  reduced_string = string.downcase.gsub(/[^A-Za-z]/, "")
+  new_string = string.gsub(/[^A-Za-z], "")
+
 
   i = 0
-  while i < (reduced_string.length - 1)
-    if reduced_string[i] != reduced_string[reduced_string.length - 1]
+  while i < (new_string.length - 1)
+    if new_string[i]!= new_string[new_string.length - 1]
       return false
     end
   end
 
   return true
 end
-
-
 
 # Time Complexity: ?
 # Space Complexity: ?
