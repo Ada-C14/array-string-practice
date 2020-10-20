@@ -67,14 +67,14 @@ describe "Practice Exercises" do
       # Assert
       expect(output).must_equal ""
     end
-    
+
     it "will work for ['flower','flower','flower']" do
       # Arrange
       strings = ["flower","flower","flower"]
-      
+
       # Act
       output = longest_prefix(strings)
-      
+
       # Assert
       expect(output).must_equal "flower"
     end
@@ -88,6 +88,17 @@ describe "Practice Exercises" do
 
       # Assert
       expect(output).must_equal "ca"
+    end
+
+    xit "will work for ['fly','flower','flower']" do
+      # Arrange
+      strings = ["fly","flower","flower"]
+
+      # Act
+      output = longest_prefix(strings)
+
+      # Assert
+      expect(output).must_equal "flower"
     end
   end
 end
