@@ -35,6 +35,7 @@ def longest_prefix(strings)
     end
     output << letter
   end
+  return output
 end
 
 #   shortest_string.each_char.with_index do |string, i|
