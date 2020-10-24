@@ -29,9 +29,23 @@ def is_palindrome(string)
 
 end
 
-# Time Complexity: ?
-# Space Complexity: ?
-# def longest_prefix(strings)
-#   raise NotImplementedError, "Not implemented yet"
-# end
+# Time Complexity: O(n * m)
+# Space Complexity: O(n)
+def longest_prefix(strings)
+  prefix = ""
+  index = 0
+
+  if strings.empty?
+    return prefix
+  end
+
+  strings[0].each_char do |character|
+    strings.each do |word|
+      return prefix unless word[index] == character
+    end
+    prefix << character
+    index += 1
+  end
+
+end
 
