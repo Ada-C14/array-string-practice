@@ -20,12 +20,18 @@ def is_palindrome(string)
   return true
 end
 
-# Time Complexity: ?
-# Space Complexity: ?
+# Time Complexity: O(n)
+# Space Complexity: O(n)
 def longest_prefix(strings)
   prefix = ""
-  i = 0
-  strings.each do |string|
-    
+  strings[0].length.times do |i|
+    letter = strings[0][i]
+    strings[1..-1].each do |word|
+      if word[i] != letter
+        return prefix
+      end
+    end
+    prefix += letter
   end
+  return prefix
 end
