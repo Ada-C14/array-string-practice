@@ -20,7 +20,7 @@ def is_palindrome(string)
   return true
 end
 
-# Time Complexity: O(n)
+# Time Complexity: O(n^2)
 # Space Complexity: O(n)
 def longest_prefix(strings)
   prefix = ""
